@@ -20,5 +20,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SaudacaoActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="surpreenda.ACAO_EXIBIR_SAUDACAO"/>
+                <category android:name="surpreenda.CATEGORIA_SAUDACAO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

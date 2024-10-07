@@ -1,6 +1,7 @@
 package br.com.sinodalprado.surpreenda;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -21,9 +22,19 @@ public class MainActivity extends Activity {
         this.saudacao = getResources().getString(R.string.saudacao);
     }
 
-    public void surpreenderUsuario(View v){
+    /*public void surpreenderUsuario(View v){
         Editable texto = this.nomeEditText.getText();
         String msg = saudacao + " " + texto.toString();
         this.saudacaoTextView.setText(msg);
+    }*/
+
+    // Novo método surpreender usuário chamdndo a intent para a outra tela
+    public void surpreenderUsuario(View v){
+        Intent intent = new Intent(SaudacaoActivity.ACAO_EXIBIR_SAUDACAO);
+        intent.addCategory(SaudacaoActivity.CATEGORIA_SAUDACAO);
+        System.out.println("Estou aqui");
+        String texto = nomeEditText.getText().toString();
+        intent.putExtra(SaudacaoActivity.EXTRA_NOME_USUARIO, texto);
+        startActivity(intent);
     }
 }
